@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HeroService} from "../hero-detail/hero.service";
 import {Hero} from "../hero-detail/hero";
 import {Router} from "@angular/router";
+import {Http} from "@angular/http";
 
 @Component({
   moduleId: module.id.toString(),
