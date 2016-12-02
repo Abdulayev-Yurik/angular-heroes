@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Http, Response, Headers} from '@angular/http';
-import { Observable }     from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 
 import {Hero} from './hero';
@@ -11,6 +10,15 @@ export class HeroService {
   private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor (private http: Http) {}
+
+  delete(id: number): Promise<void>{
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http
+      .delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError)
+  }
 
   create(name: string): Promise<Hero> {
     return this.http

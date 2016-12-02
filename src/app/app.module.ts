@@ -9,13 +9,17 @@ import {HeroesComponent} from "./heroes/heroes.component";
 import {HeroService} from "./hero-detail/hero.service";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {AppRoutingModule} from "./app.routing.module";
+import { HeroComponent } from './hero/hero.component';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroDetailComponent,
     HeroesComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroComponent,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule,
