@@ -30,8 +30,9 @@ export class HeroService {
 
   update(hero: Hero): Promise<Hero> {
     const url = `${this.heroesUrl}/${hero.id}`;
+    alert(hero.id);
     return this.http
-      .put(url, JSON.stringify(hero), {headers: this.headers})
+      .patch(url, JSON.stringify({name:hero.name}), {headers: this.headers})
       .toPromise()
       .then(() => hero)
       .catch(this.handleError);
